@@ -1,19 +1,26 @@
 /* to do list :
 create backgroud image, animation, and inputs */
 
-const buttonStart = document.getElementById('button')
-const diceLoader = document.getElementById('centering')
+/* const buttonStart = document.getElementById('button') */
+
+
+setTimeout(function() { 
+    const diceLoader = document.getElementById('centering');
+    diceLoader.hidden = "true";
+}, 1000);
+
+
 
 /* const diceLoader = document.getElementById('centering') */
-function start() {
-    if (diceLoader.style.display == "none") {
-        diceLoader.style.display = ''
-    }
-}
-function changePage
+/*     window.addEventListener("load", function(){
+        console.log('yep')
+        })
 
-
-buttonStart.addEventListener('event', () => {
+    buttonStart.addEventListener('event', () => {
     start();
-    changePage()
-});
+}); */
+// this function is here to add 3 second to the dice loader....
+/* setTimeout(function(){
+    var load_screen = document.getElementById("load_screen");
+    document.body.removeChild(load_screen);
+  },3000) */
