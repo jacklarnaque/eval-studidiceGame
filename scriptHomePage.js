@@ -1,26 +1,34 @@
 /* to do list :
 create backgroud image, animation, and inputs */
-
-/* const buttonStart = document.getElementById('button') */
-
-
-setTimeout(function() { 
+setTimeout(function () {
     const diceLoader = document.getElementById('centering');
     diceLoader.hidden = "true";
-}, 1000);
+}, 2000)
 
+// Get the players ID's :
+let buttonPlayer1 = document.getElementById('promptPlayer1');
+let buttonPlayer2 = document.getElementById('promptPlayer2');
+let buttonAnnonymous = document.getElementById('annonymousGame');
 
+//!! ALERT ASK !! event for prompt user, should ask to a studi teacher why the 'typof answer !== 'string' allow the numbers from the user response
+buttonPlayer1.addEventListener("click", (e => {
+    let answer = prompt("entrez le nom du joueurs 1")
+    if (typeof answer !== 'string') {
+        alert('Saisie incorrecte')
+    } else {
+        buttonPlayer1.innerHTML = answer;
+     }
+}));
 
-/* const diceLoader = document.getElementById('centering') */
-/*     window.addEventListener("load", function(){
-        console.log('yep')
-        })
+buttonPlayer2.addEventListener("click", (e => {
+    let answer = prompt("entrez le nom du joueurs 2")
+    if (typeof answer !== 'string') {
+        alert('Saisie incorrecte')
+    } else {
+        buttonPlayer2.innerHTML = answer
+    }
+}));
 
-    buttonStart.addEventListener('event', () => {
-    start();
-}); */
-// this function is here to add 3 second to the dice loader....
-/* setTimeout(function(){
-    var load_screen = document.getElementById("load_screen");
-    document.body.removeChild(load_screen);
-  },3000) */
+buttonAnnonymous.addEventListener("click", (e => {
+    URL
+}));
