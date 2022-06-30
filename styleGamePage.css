@@ -3,22 +3,113 @@ body, html {
 }
 body {
     position: relative; 
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    display: flex;
+}
+.play {
+    font-size: 2.6rem;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    text-align: center;
+}
+@media only screen and (max-width: 359px) {
+    .play {
+       font-size: 1.5rem;
+       padding-bottom: 2%;
+       padding-top: 2%
+    }
+    .body {
+        background-color: #931717;
+    }
+}
+    /* 
+    @media only screen and (min-width: 407px) {
+
+   .play {
+       font-size: 1.75rem;
+   }
+   }
+ @media only screen and (min-width: 603px) {
+   .play {
+       font-size: 2rem;
+   }
+}
+@media only screen and (max-width: 1315px) {
+
+} */
+
+
+.lancer {
+    padding: 1%;
+    margin: 1%;
     align-items: center;
+    justify-content: center;
+}
+#throw:hover {
+    box-shadow: 10px 10px;
+}
+
+
+.button-throw {
+    display: flex;
+    justify-content: center;
+}
+.contain {
+    padding: 2px;
+    margin: 2px;
+    background-image: url(img/background.png);
+    align-items: center;
+    justify-content: center;
     margin: 1px;
     padding: 1px;
     position: relative; 
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(img/thumb2-4k-gambling-table-casino-dice-chips.jpg);
-    justify-content: center;
-    background-color: #cccccc;
+    background-color: #931717;
     background-repeat: no-repeat;
     background-position: center; 
     background-size: cover;
 }
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 2%;
+}
+.dices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5%;
+    margin: 5%;
+}
+.img-contain {
+display: flex;
+justify-content: center;
+justify-content: space-around;
+padding: 2%;
+
+}
+.img-box {
+    max-width: 150px;
+    max-height: 150px;
+    width: 10px;
+    height: auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.img-dice {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+  
+
