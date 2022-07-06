@@ -12,6 +12,7 @@ body, html {
 
 .centering-block {
 	text-align: center;
+	z-index: 1000;
 }
 
 .centering-block:before {
