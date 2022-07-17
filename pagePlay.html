@@ -39,26 +39,30 @@
     <div class="contain container">
         <div class="diceIcon row">
             <i class="fa-solid fa-dice fa-6x"></i></div>
+
             <!-- global Score -->
         <div class="row score">
-            <div class="col-6 play" id="globalScore1"></div>
-            <div class="col-6 play" id="globalScore2"></div>
+            <div class="col play" id="displayTurnPlayer0"></div>
+                <button class="col button button-throw play score" id="roll">Lancer!</button>
+            <div class="col play" id="displayTurnPlayer1"></div>
+        </div>
+        <div class="row score">
+            <div class="col play" id="globalScore0"></div>
+            <button class="button button-hold col play" id="hold">Stop!</button>    
+            <div class="col play" id="globalScore1"></div>
         </div>
         <!-- Round Score -->
         <div class="row score">
-            <div class="col-6 play" id="roundScore1"></div>
-            <div class="col-6 play" id="roundScore2"></div>
+            <div class="col play" id="roundScore0"></div>
+            <div class="col">
+                <img src="img/imgDice/dice-1.png" class="img-dice">
+</div>
+            <div class="col play" id="roundScore1"></div>
         </div>
         <span class="play score" id="displayTurnPlayer"></span>
-        <div class="lancer">
-            <button class="button col play score" id="roll">Lancer!</button>
-        </div>
-        <div class='lancer'>
-            <button class="button col play" id="hold">Stop!</button>
-        </div>
         <div class="img-contain">
             <div class="col img-box">
-                <img src="img/imgDice/dice-1.png" class="img-dice">
+                
             </div>
         </div>
     </div>

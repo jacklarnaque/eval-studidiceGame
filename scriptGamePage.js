@@ -15,64 +15,93 @@ const getQueryParams = (params, url) => {
   return qString ? qString[1] : null;
 };
 
-let player1 = getQueryParams('player1', window.location);
-let player2 = getQueryParams('player2', window.location);
+const player0 = getQueryParams('player1', window.location);
+const player1 = getQueryParams('player2', window.location);
 
 //the code below is to display the  global users scores
-document.getElementById('globalScore1').innerHTML = `score global ${player1} = `
+/* document.getElementById('globalScore1').innerHTML = `score global ${player1} = `
 document.getElementById('globalScore2').innerHTML = `score global ${player2} = `
 document.getElementById('roundScore1').innerHTML = `Score Tour ${player1} = `
-document.getElementById('roundScore2').innerHTML = `Score Tour ${player2} = `
+document.getElementById('roundScore2').innerHTML = `Score Tour ${player2} = ` */
 
 
 //we begin the algo for the dice game
 
-const firstRandomNum = Math.floor(Math.random()
-  * 6) + 1
+
 
 // we now get the 
 // we need to get the variables necessary :
-let rollDice = document.getElementById('roll');
-let hold = document.getElementById('hold');
-let displayTurnPlayer = document.getElementById('displayTurnPlayer');
 
+let activePlayer, roundScore, globalScore, dice, play = true;
 
-let activePlayer, roundScore, globalScore, dice;
 
 function start() {
-  globalScore = [0, 0];
+  globalScore = [0,0];
   roundScore = 0;
   activePlayer = 0;
-
-  document.getElementById('score1').textContent = '0';
-  document.getElementById('current-0').textContent = '0';
-  document.getElementById('score-1').textContent = '0';
-  document.getElementById('current-1').textContent = '0';
-
+  //display players names
+  document.getElementById('displayTurnPlayer0').textContent = player0;
+  document.getElementById('displayTurnPlayer1').textContent = player1;
+  //display scores
+  document.getElementById('globalScore0').textContent = '0';
+  document.getElementById('roundScore0').textContent = '0';
+  document.getElementById('globalScore1').textContent = '0';
+  document.getElementById('roundScore1').textContent = '0';
 }
 
+start();
+
 //listners:
-window.addEventListener('load', (player1, player2) => {
-  displayTurnPlayer.innerHTML = `${player1} à votre tour de jouer!`
-  displayTurnPlayer.innerHTML = `${player2} à votre tour de jouer!`
+
+
+document.getElementById('roll').addEventListener('click', function () {
+  if (play) {
+    let dice = Math.floor(Math.random() * 6) + 1;
+    let firstDiceImg = 'img/imgDice/dice-' + dice + '.png'
+    document.querySelectorAll('img')[0].setAttribute('src', firstDiceImg);
+
+    if (dice !== 1) {
+      roundScore += dice;
+      document.querySelector('#roundScore' + activePlayer).textContent = roundScore;
+    }
+    else {
+      nextRound();
+    }
+  }
+});
+/* now we should buid the hold button,by that we let the choice to the active player to keep going 
+to play or to stop and add the roundscore into the global score */
+document.getElementById('hold').addEventListener('click', function() {
+  if (play) {
+    globalScore[activePlayer] += roundScore;
+    document.getElementById('globalScore' + activePlayer).textContent = globalScore[activePlayer];
+
+    if (globalScore[activePlayer] >= 100) {
+      if 
+      (activePlayer === 0) {
+        document.getElementById('displayTurnPlayer' + activePlayer).textContent = player0 + ' a gagner!';
+        play = false;
+      } else if (player1 === 1) {
+        document.getElementById('displayTurnPlayer' + activePlayer).textContent = player1 + ' a gagner!';
+        play = false;
+      }
+    } else {
+      nextRound();
+    }
+  }
 });
 
-
-const firstDiceImg = 'img/imgDice/dice-' + firstRandomNum + '.png'
-document.querySelectorAll('img')[0].setAttribute('src', firstDiceImg)
-
-
-let num = '';
-
-rollDice.addEventListener('click', () => {
-  firstRandomNum;
-
-})
-console.log(num)
-
-// get elements necessary to buid our game
-// create functions :
-// lancer:
+function nextRound() {
+  if (activePlayer === 0) {
+    activePlayer = 1;
+  }
+  else {
+    activePlayer = 0;
+  }
+  
+  roundScore = 0;
+  document.getElementById('roundScore0').textContent = '0';
+  document.getElementById('roundScore1').textContent = '0';
+}
 
 
-// code to change the im dice :
