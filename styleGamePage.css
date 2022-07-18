@@ -1,37 +1,47 @@
-html {
 
-        background: url(img/background.png) no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        height: 100%;
-        width: 100%;
-        max-height: 100%;
-        align-items: center;
-        justify-content: center;
-      }
 body, html {
     height: 100%;
     width: 100%;
     font-family: 'Lato', sans-serif;
 }
+.contain {
+    height: 100%;
+    background-image: url(img/background.png);
 
+}
 .play {
     font-size: 2.6rem;
     padding-bottom: 2%;
     padding-top: 2%;
     text-align: center;
 }
+.img-dice {
+    width: 50%;
+    height: auto;
+}
 @media only screen and (max-width: 800px) {
     .play {
        font-size: 1.3rem;
     }
+    .score {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 5%;
+    }
+    .img-dice {
+        width:100%;
+        height: auto;
+    }
+
 }
-@media only screen and (max-width: 900px) {
-    .contain {
-    position: relative;
+@media only screen and (min-width: 1000px) {
+   
+  
 }
+
+
     /* 
     @media only screen and (min-width: 407px) {
 
@@ -49,8 +59,8 @@ body, html {
 } */
 
 .diceIcon {
-    padding: 2%;
-    margin: 2%;
+    padding: 1%;
+    margin: 1%;
     text-align: center;
 }
 .lancer {
@@ -64,25 +74,20 @@ body, html {
     box-shadow: 10px 10px;
 }
 
-.contain {
-    height: 100%;
-    background-image: url(img/background.png);
 
-  
-}
 .score {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 5%;
+    padding: 3%;
 }
 .img-contain {
     display: flex;
     justify-content: center;
     justify-content: space-around;
     padding: 2%;
-    margin: 5%;
+    margin: 2%;
 
 }
 .img-box {
@@ -95,10 +100,7 @@ body, html {
     flex-wrap: wrap;
     justify-content: center;
 }
-.img-dice {
-    width: 80%;
-    height: auto;
-}
+
 .button {
     width: 20%;
     max-width: 20%;

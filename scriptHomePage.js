@@ -6,7 +6,7 @@
 setTimeout(function () {
     const diceLoader = document.getElementById('centering');
     diceLoader.hidden = "true";
-}, 1000);
+}, 3000);
 
 
 
