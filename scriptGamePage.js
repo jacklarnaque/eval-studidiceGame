@@ -18,6 +18,7 @@ const getQueryParams = (params, url) => {
 const player0 = getQueryParams('player1', window.location);
 const player1 = getQueryParams('player2', window.location);
 
+
 //the code below is to display the  global users scores
 /* document.getElementById('globalScore1').innerHTML = `score global ${player1} = `
 document.getElementById('globalScore2').innerHTML = `score global ${player2} = `
@@ -26,10 +27,6 @@ document.getElementById('roundScore2').innerHTML = `Score Tour ${player2} = ` */
 
 
 //we begin the algo for the dice game
-
-
-
-// we now get the 
 // we need to get the variables necessary :
 
 let activePlayer, roundScore, globalScore, dice, play = true;
@@ -76,12 +73,11 @@ document.getElementById('hold').addEventListener('click', function() {
     globalScore[activePlayer] += roundScore;
     document.getElementById('globalScore' + activePlayer).textContent = globalScore[activePlayer];
 
-    if (globalScore[activePlayer] >= 100) {
-      if 
-      (activePlayer === 0) {
+    if (globalScore[activePlayer] >= 10) {
+      if(activePlayer === 0) {
         document.getElementById('displayTurnPlayer' + activePlayer).textContent = player0 + ' a gagner!';
-        play = false;
-      } else if (player1 === 1) {
+        play = falsr;
+      } else if (activePlayer === 1) {
         document.getElementById('displayTurnPlayer' + activePlayer).textContent = player1 + ' a gagner!';
         play = false;
       }

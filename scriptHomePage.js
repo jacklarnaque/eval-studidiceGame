@@ -15,7 +15,7 @@ const buttonPlayer1 = document.getElementById('promptPlayer1');
 const buttonPlayer2 = document.getElementById('promptPlayer2');
 const startButton = document.getElementById('startButton');
 const buttonAnnonymous = document.getElementById('annonymousGame');
-// le ?  est la fin de lurl  et debut de  definition of the parameters of url
+// the '?' is the end of the URL  et debut de  definition of the parameters of url
 /* startButton.hidden = true; 
 */
 startButton.addEventListener("click", () => {
@@ -23,32 +23,9 @@ startButton.addEventListener("click", () => {
 })
 // ensuite on recupere les varibales creer dans l'url avec une methode spécifique
 buttonAnnonymous.addEventListener("click", () => {
-    window.location.href = 'pagePlay.html';
+    
+window.location.href = 'pagePlay.html?player1=' + "player1" + '&player2=' + "player2";
 })
-
-
-/* 
-<---------------HELP FOR CUSTOM EVENT METHODO start------------------>
-
- ya.addEventListener("startTheGame", function (e) {
-    ya.class
- });
-
- function changeText(n, c) {
-     const event = new CustomEvent("startTheGame", {
-         detail: {
-             number: n,
-             textColor: c
-
-         }
-     });
-
-     ya.dispatchEvent(event);
-
- }
- <---------------CUSTOM EVENT METHODO end----------------------->
- */
-
 
 let answer = '';
 let answer2 = '';
@@ -59,7 +36,6 @@ buttonPlayer1.addEventListener("click", () => {
         alert('Saisie incorrecte, le nom du joueur ne doit pas dépassé 10 caractères!');
     } else {
         buttonPlayer1.innerHTML = answer;
-        buttonAnnonymous.style.display = 'none';
     }
 });
 let joueur2 = buttonPlayer2.addEventListener("click", () => {
@@ -68,7 +44,6 @@ let joueur2 = buttonPlayer2.addEventListener("click", () => {
         alert('Saisie incorrecte, le nom du joueur ne doit pas dépassé 10 caractères!');
     } else {
         buttonPlayer2.innerHTML = answer2;
-        buttonAnnonymous.style.display = 'none';
         startButton.hidden = false;
         return answer2
     }
