@@ -76,7 +76,7 @@ document.getElementById('hold').addEventListener('click', function() {
     if (globalScore[activePlayer] >= 10) {
       if(activePlayer === 0) {
         document.getElementById('displayTurnPlayer' + activePlayer).textContent = player0 + ' a gagner!';
-        play = falsr;
+        play = false;
       } else if (activePlayer === 1) {
         document.getElementById('displayTurnPlayer' + activePlayer).textContent = player1 + ' a gagner!';
         play = false;
