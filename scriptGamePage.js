@@ -17,21 +17,21 @@ const getQueryParams = (params, url) => {
 
 const player0 = getQueryParams('player1', window.location);
 const player1 = getQueryParams('player2', window.location);
-
-
-//the code below is to display the  global users scores
-/* document.getElementById('globalScore1').innerHTML = `score global ${player1} = `
-document.getElementById('globalScore2').innerHTML = `score global ${player2} = `
-document.getElementById('roundScore1').innerHTML = `Score Tour ${player1} = `
-document.getElementById('roundScore2').innerHTML = `Score Tour ${player2} = ` */
-
-
 //we begin the algo for the dice game
 // we need to get the variables necessary :
 
 let activePlayer, roundScore, globalScore, dice, play = true;
-
-
+let playAgain = document.getElementById('playAgain')
+playAgain.hidden = true;
+let gameRules = document.getElementById('rule')
+let buttunRule = document.getElementById('buttonRules')
+gameRules.hidden = true
+//TO DO : need to do a button who display and hide the rules of the game
+buttunRule.addEventListener("click", function() {
+  if(gameRules.hidden = true) {
+    gameRules.hidden = false
+  }
+})
 function start() {
   globalScore = [0,0];
   roundScore = 0;
@@ -50,6 +50,7 @@ start();
 
 //listners:
 
+//algo to display the good dices images:
 
 document.getElementById('roll').addEventListener('click', function () {
   if (play) {
@@ -73,7 +74,8 @@ document.getElementById('hold').addEventListener('click', function() {
     globalScore[activePlayer] += roundScore;
     document.getElementById('globalScore' + activePlayer).textContent = globalScore[activePlayer];
 
-    if (globalScore[activePlayer] >= 10) {
+    if (globalScore[activePlayer] >= 100) {
+      playAgain.hidden = false
       if(activePlayer === 0) {
         document.getElementById('displayTurnPlayer' + activePlayer).textContent = player0 + ' a gagner!';
         play = false;
@@ -99,5 +101,3 @@ function nextRound() {
   document.getElementById('roundScore0').textContent = '0';
   document.getElementById('roundScore1').textContent = '0';
 }
-
-

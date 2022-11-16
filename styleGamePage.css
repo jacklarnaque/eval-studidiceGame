@@ -19,6 +19,17 @@ body, html {
     width: 50%;
     height: auto;
 }
+.button-play-again {
+    display: flex;
+    justify-content: center;
+}
+.btnInfo {
+    margin-top: 15px!important;
+    font-size: larger!important;
+}
+p {
+    text-align: justify;
+}
 @media only screen and (max-width: 800px) {
     .play {
        font-size: 1.3rem;
