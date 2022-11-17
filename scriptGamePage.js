@@ -21,19 +21,34 @@ const player1 = getQueryParams('player2', window.location);
 // we need to get the variables necessary :
 
 let activePlayer, roundScore, globalScore, dice, play = true;
+//Play agin is apearing at the end of the game to start an other game, basicaly refresh the page
 let playAgain = document.getElementById('playAgain')
+playAgain.addEventListener('click', () => {
+  window.location.reload();
+})
+
 playAgain.hidden = true;
-let gameRules = document.getElementById('rule')
-let buttunRule = document.getElementById('buttonRules')
-gameRules.hidden = true
-//TO DO : need to do a button who display and hide the rules of the game
-buttunRule.addEventListener("click", function() {
-  if(gameRules.hidden = true) {
-    gameRules.hidden = false
+
+//!!!!!!Problem function doesnt works!!!!!!!
+let btnRule = document.getElementById('btnRule');
+let rule = document.getElementById('rule');
+let btnRulesHide = document.getElementById('btnRulesHide');
+
+//btn to dispaly the rules
+btnRule.addEventListener('click', () => {
+  if (rule.style.display = 'none') {
+    rule.style.display = 'block';
   }
 })
+//btn to hide the rules:
+btnRulesHide.addEventListener('click', () => {
+  if (rule.style.display = 'block') {
+    rule.style.display = 'none';
+  }
+})
+
 function start() {
-  globalScore = [0,0];
+  globalScore = [0, 0];
   roundScore = 0;
   activePlayer = 0;
   //display players names
@@ -69,14 +84,14 @@ document.getElementById('roll').addEventListener('click', function () {
 });
 /* now we should buid the hold button,by that we let the choice to the active player to keep going 
 to play or to stop and add the roundscore into the global score */
-document.getElementById('hold').addEventListener('click', function() {
+document.getElementById('hold').addEventListener('click', function () {
   if (play) {
     globalScore[activePlayer] += roundScore;
     document.getElementById('globalScore' + activePlayer).textContent = globalScore[activePlayer];
 
     if (globalScore[activePlayer] >= 100) {
       playAgain.hidden = false
-      if(activePlayer === 0) {
+      if (activePlayer === 0) {
         document.getElementById('displayTurnPlayer' + activePlayer).textContent = player0 + ' a gagner!';
         play = false;
       } else if (activePlayer === 1) {
@@ -96,7 +111,7 @@ function nextRound() {
   else {
     activePlayer = 0;
   }
-  
+
   roundScore = 0;
   document.getElementById('roundScore0').textContent = '0';
   document.getElementById('roundScore1').textContent = '0';

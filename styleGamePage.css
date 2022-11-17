@@ -23,6 +23,15 @@ body, html {
     display: flex;
     justify-content: center;
 }
+.btn {
+    background-color: #c5c5c53d!important;
+    color: rgba(0, 0, 0, 0.624)!important;
+}
+.btn:hover {
+    color: #fcfffdae!important;
+    background-color: #362c2c9a!important;
+    
+}
 .btnInfo {
     margin-top: 15px!important;
     font-size: larger!important;
@@ -30,6 +39,14 @@ body, html {
 p {
     text-align: justify;
 }
+.rule {
+    display: none;
+    padding-top: 5px;
+}
+.btnRules {
+    margin-top: 10px!important;
+}
+
 @media only screen and (max-width: 800px) {
     .play {
        font-size: 1.3rem;

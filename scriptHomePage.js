@@ -20,7 +20,7 @@ startButton.addEventListener("click", () => {
 })
 // if the user want to use the anonymous button , then we use the same method but replace the varibles by pure Text
 buttonAnnonymous.addEventListener("click", () => {
-window.location.href = 'pagePlay.html?player1=' + "player1" + '&player2=' + "player2";
+window.location.href = 'pagePlay.html?player1=' + "Joueur1" + '&player2=' + "Joueur2";
 })
 
 let answer = '';

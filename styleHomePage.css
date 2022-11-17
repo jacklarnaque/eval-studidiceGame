@@ -78,10 +78,7 @@ body {
     background-color: #362c2c9a!important;
     
 }
-.button:hover {
-    background-color: rgb(15, 150, 8);
-    box-shadow: 3px 6px black;
-}
+
 .start {
     padding: 5px;
     margin: 5px;
