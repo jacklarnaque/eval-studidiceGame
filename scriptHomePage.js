@@ -1,8 +1,3 @@
-/* to do list : */
-// set the script to switch to the game page straight after the both prompt done(players 1&2)
-// has tro be responsive 
-// start the game page with algo
-
 setTimeout(function () {
     const diceLoader = document.getElementById('centering');
     diceLoader.hidden = "true";
@@ -16,14 +11,15 @@ const buttonPlayer2 = document.getElementById('promptPlayer2');
 const startButton = document.getElementById('startButton');
 const buttonAnnonymous = document.getElementById('annonymousGame');
 // the '?' is the end of the URL  et debut de  definition of the parameters of url
-/* startButton.hidden = true; 
-*/
+//we hide the start button here then the user can't start a game without the correct players informations(named or anonymous)
+startButton.hidden = true; 
+
+// We here get the variables created into the URL with the method window.location.href
 startButton.addEventListener("click", () => {
     window.location.href = 'pagePlay.html?player1=' + answer + '&player2=' + answer2;
 })
-// ensuite on recupere les varibales creer dans l'url avec une methode spécifique
+// if the user want to use the anonymous button , then we use the same method but replace the varibles by pure Text
 buttonAnnonymous.addEventListener("click", () => {
-    
 window.location.href = 'pagePlay.html?player1=' + "player1" + '&player2=' + "player2";
 })
 
