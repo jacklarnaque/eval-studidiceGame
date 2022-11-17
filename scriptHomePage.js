@@ -20,14 +20,14 @@ startButton.addEventListener("click", () => {
 })
 // if the user want to use the anonymous button , then we use the same method but replace the varibles by pure Text
 buttonAnnonymous.addEventListener("click", () => {
-window.location.href = 'pagePlay.html?player1=' + "Joueur1" + '&player2=' + "Joueur2";
+window.location.href = 'pagePlay.html?player1=' + "J1" + '&player2=' + "J2";
 })
 
 let answer = '';
 let answer2 = '';
 
 buttonPlayer1.addEventListener("click", () => {
-    answer = prompt("entrez le nom du joueurs 1")
+    answer = prompt(" Entrez le nom du joueurs 1")
     if (answer.length > 10) {
         alert('Saisie incorrecte, le nom du joueur ne doit pas dépassé 10 caractères!');
     } else {
@@ -35,7 +35,7 @@ buttonPlayer1.addEventListener("click", () => {
     }
 });
 let joueur2 = buttonPlayer2.addEventListener("click", () => {
-    answer2 = prompt("entrez le nom du joueurs 2")
+    answer2 = prompt(" Entrez le nom du joueurs 2")
     if ((answer2.length > 10)) {
         alert('Saisie incorrecte, le nom du joueur ne doit pas dépassé 10 caractères!');
     } else {
